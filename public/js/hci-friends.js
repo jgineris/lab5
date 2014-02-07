@@ -2,8 +2,21 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+
 	initializePage();
-})
+
+
+$(".nameclick").click(function (e) {
+	e.preventDefault();
+	console.log("INSIDE CLICK");
+    var oldname = $(this).find('h3').text();
+    console.log("old name is " + oldname);
+    var newname = anagrammedName(oldname);
+    console.log("made new name " + newname);
+    $(this).find('h3').text(newname);
+    return true;
+});
+});
 
 /*
  * Function that is called when the document is ready.
